@@ -38,7 +38,7 @@ if you do not have it
 `pwd`
 
 * Inside `flex.py` change `chromedriver = path/of/chromedriver`
-* Ex: `chromedriver = /home/User/Desktop/Course-Registration/chromedriver/chromedriver`
+* Ex: `chromedriver = /home/User/Desktop/Flex-bot/chromedriver/chromedriver`
 
 * Install pip if not installed
 `sudo apt-get install python-setuptools`

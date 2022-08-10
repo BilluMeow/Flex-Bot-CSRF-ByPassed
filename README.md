@@ -31,8 +31,8 @@ if you do not have it
 ### Run:
 * Open up `terminal` in finder or searchbar
 
-* Change directory to where Course-Registration-master is: i.e:
-`cd Downloads/Couse-Registration-master`
+* Change directory to where FLex-bot is: i.e:
+`cd Downloads/FLex-bot`
 
 * Locate current directory:
 `pwd`

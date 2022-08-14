@@ -3,6 +3,7 @@ import getpass
 import os
 
 from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.core.utils import ChromeType
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -23,11 +24,12 @@ class Registration(object):
 
     def loginToAccount(self):
         baseurl = 'https://flexstudent.nu.edu.pk/login'
-        # options = Options()
+        options = Options()
         # options.add_argument('--disable-gpu')
         # options.add_argument("--disable-extensions")
         # options.add_experimental_option("detach", True)
-        mydriver = webdriver.Chrome(ChromeDriverManager().install())
+        options.binary_location = r"C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe"
+        mydriver = webdriver.Chrome(ChromeDriverManager(chrome_type=ChromeType.BRAVE).install(), options=options)
         mydriver.get(baseurl)
         actions = ActionChains(mydriver)
                                 

@@ -2,12 +2,16 @@ import time
 import getpass
 import os
 
+from webdriver_manager.chrome import ChromeDriverManager
+
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
  
-chromedriver = os.getcwd() + "\\chromedriver.exe"
+chromedriver = repr(os.getcwd() + "\\chromedriver").replace("\\\\", "\\")
+
+print(chromedriver)
 
 
 class Registration(object):
@@ -23,7 +27,7 @@ class Registration(object):
         # options.add_argument('--disable-gpu')
         # options.add_argument("--disable-extensions")
         # options.add_experimental_option("detach", True)
-        mydriver = webdriver.Chrome(chromedriver)
+        mydriver = webdriver.Chrome(ChromeDriverManager().install())
         mydriver.get(baseurl)
         actions = ActionChains(mydriver)
                                 
@@ -71,9 +75,9 @@ crn3 = '24414'
 crn4 = '24744'
 crn5 = '22516'
 
-myuser = input('Enter GWID: ')
-mypass = getpass.getpass('Enter password: ')
-mypass2 = getpass.getpass('Enter Second Password: ')
+myuser = "19K-1069" # input('Enter GWID: ')
+mypass =  getpass.getpass('Enter password: ')
+mypass2 = mypass # getpass.getpass('Enter Second Password: ')
 
 myobj = Registration(myuser, mypass, mypass2)
 myobj.loginToAccount()

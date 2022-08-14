@@ -33,17 +33,16 @@ class Registration(object):
         mydriver.get(baseurl)
         actions = ActionChains(mydriver)
                                 
-        mydriver.find_element_by_id("UserID").send_keys(self.login)
-        mydriver.find_element_by_xpath(
-            '//*[@id="PIN"]/input').send_keys(self.password)
-        mydriver.find_element_by_xpath("//p//input[@type='submit']").click()
+        mydriver.find_element("name", "username").send_keys(self.login)
+        mydriver.find_element("name", "password").send_keys(self.password)
+        mydriver.find_element("id", "m_login_signin_submit").click()
 
-        mydriver.find_element_by_id('answer').send_keys(self.secondpass)
+        #mydriver.find_element('id', 'answer').send_keys(self.secondpass)
 
-        mydriver.find_element_by_xpath("//p//input[@type='submit']").click()
+        #mydriver.find_element_by_xpath("//p//input[@type='submit']").click()
 
         mydriver.get(
-            'https://flexstudent.nu.edu.pk/Student/CourseRegistration?dump=KicqbxFjLEz56%2B%2FX9dNCAw%3D%3D')
+            'https://flexstudent.nu.edu.pk/')
 
         time.sleep(1)
 
@@ -60,15 +59,15 @@ class Registration(object):
         time.sleep(5)
         #enter your name of courses below
 
-        mydriver.find_element_by_id("crn_id1").send_keys(crn1)
+        mydriver.find_element("id", "crn_id1").send_keys(crn1)
 
-        mydriver.find_element_by_id("crn_id2").send_keys(crn2)
+        mydriver.find_element("id", "crn_id2").send_keys(crn2)
 
-        mydriver.find_element_by_id("crn_id3").send_keys(crn3)
+        mydriver.find_element("id", "crn_id3").send_keys(crn3)
 
-        mydriver.find_element_by_id("crn_id4").send_keys(crn4)
+        mydriver.find_element("id", "crn_id4").send_keys(crn4)
 
-        mydriver.find_element_by_id("crn_id5").send_keys(crn5)
+        mydriver.find_element("id", "crn_id5").send_keys(crn5)
 
 
 crn1 = '24415'

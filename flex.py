@@ -1,12 +1,13 @@
 import time
 import getpass
+import os
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
  
-chromedriver = "path/to/chromedriver"
+chromedriver = os.getcwd() + "\\chromedriver.exe"
 
 
 class Registration(object):
